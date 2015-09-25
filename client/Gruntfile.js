@@ -37,6 +37,17 @@ module.exports = function (grunt) {
                 }
             }
         },
+        
+        //Compiles typescript in js
+        typescript: {
+            base: {
+                src: ['<%= config.app %>/**/*.ts'],
+                options: {
+                    target: 'es5',
+                    sourceMap: true
+                }
+            }
+        },
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
@@ -50,6 +61,10 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 }
+            },
+            ts: {
+                files: ['<%= config.app %>/**/*.ts'],
+                tasks: ['typescript']
             },
             compass: {
                 files: ['<%= config.app %>/**/*.{scss,sass}'],
