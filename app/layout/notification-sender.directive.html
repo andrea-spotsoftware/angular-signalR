@@ -1,0 +1,21 @@
+<form name="form" novalidate ng-submit="vm.setupNotification(form)">
+    <md-whiteframe layout class="md-whiteframe-z2">
+        <div layout-sm="column" layout-margin flex="70">
+            <md-input-container flex>
+                <label>Notification text</label>
+                <input name="notificationtext" required ng-model="vm.message.notificationText"  ng-disabled="!vm.enabled">
+                <div ng-messages="form.notificationtext.$error" ng-show="form.notificationtext.$dirty && vm.submitted">
+                    <div ng-message="required">This is required!</div>
+                </div>
+            </md-input-container>
+            <div flex layout="row" layout-align="center center">
+                <label flex="30">Delay</label>
+                <md-slider flex min="0" max="15" ng-model="vm.message.notificationSeconds" aria-label="blue" id="blue-slider" class="md-primary" md-discrete  ng-disabled="!vm.enabled">
+                </md-slider>
+            </div>
+        </div>
+        <div layout flex layout-align="end center">
+            <md-button class="md-raised md-primary" ng-disabled="!vm.enabled">Send</md-button>
+        </div>
+    </md-whiteframe>
+</form>

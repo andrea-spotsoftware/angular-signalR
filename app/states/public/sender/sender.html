@@ -1,0 +1,10 @@
+<div class="header">
+  <h1 class="md-display-1">Angular Sender</h1>
+</div>
+<div class="md-body">
+    This angular state uses a custom directive (angular-material based) to build a UI control that can be used to get notification text and delay.
+</div>
+<hub-controller hub="vm.hub" autoconnect socket-state="vm.model.socketState"></hub-controller>
+<div class="widget">
+    <notification-sender notification-function="vm.actions.setupNotification(msg)" enabled="vm.model.socketState === 2"></notification-sender>
+</div>
