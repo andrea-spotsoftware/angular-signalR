@@ -70,6 +70,11 @@
                                 });
                             });
                     }
+                },
+                stateChanged: function(callback){
+                    proxy.connection.stateChanged(function(states){
+                       callback(states); 
+                    });
                 }
             };
         }

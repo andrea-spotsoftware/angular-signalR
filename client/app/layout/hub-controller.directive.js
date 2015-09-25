@@ -28,53 +28,54 @@
         return directive;
 
         function link(scope, element, attrs, controller) {
-            if(attrs.autoconnect !== undefined){
+            if (attrs.autoconnect !== undefined) {
                 scope.vm.toggleConnect();
             }
-            
+
             scope.vm.onConnect = (scope.vm.onConnect || angular.noop);
         }
     }
 
-    Controller.$inject = ['$timeout'];
+    Controller.$inject = ['$timeout', '$scope'];
 
     /* @ngInject */
-    function Controller($timeout) {
+    function Controller($timeout, $scope) {
 
         var vm = this;
 
-        // 0 --> disconnected;
-        // 1 --> connecting;
-        // 2 --> connected;
+        // 0 --> connecting;
+        // 1 --> connected;
+        // 2 --> reconnecting;
+        // 4 --> disconnected;
 
         vm.toggle = false;
+        vm.state = 4;
 
         vm.toggleConnect = function ($ev) {
 
-            vm.state = 1;
+            if (vm.state === 4) {
 
-            if (!vm.toggle) {
-                
-                if(!$ev){
+                if (!$ev) {
+                    //Autoconnect
                     vm.toggle = true;
                 }
 
                 vm.hub.connect().then(function () {
-                    vm.state = 2;
-                    
                     vm.onConnect();
-                    
+
                 }).catch(function (e) {
-                    vm.state = 0;
                     vm.toggle = false;
                 });
-
             } else {
                 vm.hub.disconnect();
-                vm.state = 0;
             }
-
         };
+
+        vm.hub.stateChanged(function (states) {
+            $scope.$applyAsync(function () {
+                vm.state = states.newState;
+            });
+        });
 
     }
 })();
