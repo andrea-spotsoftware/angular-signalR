@@ -5,9 +5,9 @@ digraph dependencies {
     
       "blocks.logger"[label="blocks.logger", color=1]
     
-      "blocks.notification"[label="blocks.notification", color=1]
-    
       "blocks.router"[label="blocks.router", color=1]
+    
+      "blocks.signalr"[label="blocks.signalr", color=1]
     
       "app.core"[label="app.core", color=1]
     
@@ -26,11 +26,11 @@ digraph dependencies {
       
     
       
-    
-      
         "blocks.router" -> "ui.router"
       
         "blocks.router" -> "blocks.logger"
+      
+    
       
     
       
@@ -46,7 +46,7 @@ digraph dependencies {
       
         "app.core" -> "blocks.router"
       
-        "app.core" -> "blocks.notification"
+        "app.core" -> "blocks.signalr"
       
         "app.core" -> "ui.bootstrap"
       
@@ -144,74 +144,6 @@ digraph dependencies {
 
     
       
-
-      
-
-      
-
-      
-        "NotificationHub"[label="NotificationHub", color=6]
-      
-
-
-      node[shape="cds"]
-
-      
-
-      
-
-
-
-
-
-      node[shape="ellipse"]
-      
-
-      
-
-      
-
-      
-
-      
-        "blocks.notification" -> "NotificationHub"
-      
-
-      
-
-
-
-
-
-
-
-
-
-
-
-      node[shape="ellipse",style="filled", color=8]
-      
-
-      
-
-      
-
-      
-
-      
-        
-          "CONFIG"[label="CONFIG"]
-          "CONFIG" -> "NotificationHub"
-        
-          "logger"[label="logger"]
-          "logger" -> "NotificationHub"
-        
-      
-
-      
-
-    
-      
         "routerHelper"[label="routerHelper", color=2]
       
 
@@ -277,6 +209,71 @@ digraph dependencies {
 
       
 
+      
+
+      
+
+    
+      
+
+      
+
+      
+
+      
+        "SignalRHub"[label="SignalRHub", color=6]
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+
+      
+
+      
+        "blocks.signalr" -> "SignalRHub"
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+
+      
+
+      
+        
+          "CONFIG"[label="CONFIG"]
+          "CONFIG" -> "SignalRHub"
+        
       
 
       
@@ -580,8 +577,8 @@ digraph dependencies {
 
       
         
-          "NotificationHub"[label="NotificationHub"]
-          "NotificationHub" -> "ReceiverController"
+          "SignalRHub"[label="SignalRHub"]
+          "SignalRHub" -> "ReceiverController"
         
           "logger"[label="logger"]
           "logger" -> "ReceiverController"
@@ -648,8 +645,8 @@ digraph dependencies {
 
       
         
-          "NotificationHub"[label="NotificationHub"]
-          "NotificationHub" -> "SenderController"
+          "SignalRHub"[label="SignalRHub"]
+          "SignalRHub" -> "SenderController"
         
           "$mdDialog"[label="$mdDialog"]
           "$mdDialog" -> "SenderController"

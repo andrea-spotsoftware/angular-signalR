@@ -24,8 +24,8 @@ digraph dependencies {
       "blocks.router"[label="blocks.router", color=1]
       "blocks.router" -> "app.core"
     
-      "blocks.notification"[label="blocks.notification", color=1]
-      "blocks.notification" -> "app.core"
+      "blocks.signalr"[label="blocks.signalr", color=1]
+      "blocks.signalr" -> "app.core"
     
       "ui.bootstrap"[label="ui.bootstrap", color=1]
       "ui.bootstrap" -> "app.core"

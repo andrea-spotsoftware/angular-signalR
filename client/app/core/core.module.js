@@ -11,7 +11,7 @@
         'blocks.logger',
         'blocks.router',
         //'blocks.network',
-        'blocks.notification',
+        'blocks.signalr',
         // Third parties modules
         'ui.bootstrap',
         'ui.router'

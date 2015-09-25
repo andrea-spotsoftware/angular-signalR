@@ -42,8 +42,8 @@ digraph dependencies {
 
     
       
-        "NotificationHub"[label="NotificationHub"]
-        "NotificationHub" -> "ReceiverController"
+        "SignalRHub"[label="SignalRHub"]
+        "SignalRHub" -> "ReceiverController"
       
         "logger"[label="logger"]
         "logger" -> "ReceiverController"

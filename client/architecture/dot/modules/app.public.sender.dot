@@ -42,8 +42,8 @@ digraph dependencies {
 
     
       
-        "NotificationHub"[label="NotificationHub"]
-        "NotificationHub" -> "SenderController"
+        "SignalRHub"[label="SignalRHub"]
+        "SignalRHub" -> "SenderController"
       
         "$mdDialog"[label="$mdDialog"]
         "$mdDialog" -> "SenderController"

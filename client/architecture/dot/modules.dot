@@ -4,9 +4,9 @@ digraph dependencies {
   
     "blocks.logger"[label="blocks.logger", color=1]
   
-    "blocks.notification"[label="blocks.notification", color=1]
-  
     "blocks.router"[label="blocks.router", color=1]
+  
+    "blocks.signalr"[label="blocks.signalr", color=1]
   
     "app.core"[label="app.core", color=1]
   
@@ -26,11 +26,11 @@ digraph dependencies {
     
   
     
-  
-    
       "ui.router" -> "blocks.router"
     
       "blocks.logger" -> "blocks.router"
+    
+  
     
   
     
@@ -46,7 +46,7 @@ digraph dependencies {
     
       "blocks.router" -> "app.core"
     
-      "blocks.notification" -> "app.core"
+      "blocks.signalr" -> "app.core"
     
       "ui.bootstrap" -> "app.core"
     
