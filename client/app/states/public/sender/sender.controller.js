@@ -5,12 +5,12 @@
         .module('app.public.sender')
         .controller('SenderController', SenderController);
 
-    SenderController.$inject = ['NotificationHub', '$mdDialog'];
+    SenderController.$inject = ['SignalRHub', '$mdDialog'];
 
     /* @ngInject */
-    function SenderController(NotificationHub, $mdDialog) {
+    function SenderController(SignalRHub, $mdDialog) {
         var vm = this;
-        vm.hub = NotificationHub('notifications');
+        vm.hub = SignalRHub('notifications');
         
         vm.model = new function() {
             var model = this;

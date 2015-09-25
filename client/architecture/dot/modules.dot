@@ -1,0 +1,76 @@
+digraph dependencies {
+  node[shape="ellipse",style="filled",colorscheme=paired12]
+
+  
+    "blocks.logger"[label="blocks.logger", color=1]
+  
+    "blocks.router"[label="blocks.router", color=1]
+  
+    "blocks.signalr"[label="blocks.signalr", color=1]
+  
+    "app.core"[label="app.core", color=1]
+  
+    "app.layout"[label="app.layout", color=1]
+  
+    "app"[label="app", color=1]
+  
+    "app.public"[label="app.public", color=1]
+  
+    "app.public.receiver"[label="app.public.receiver", color=1]
+  
+    "app.public.sender"[label="app.public.sender", color=1]
+  
+
+  node[shape="ellipse",style="filled",color=2]
+  
+    
+  
+    
+      "ui.router" -> "blocks.router"
+    
+      "blocks.logger" -> "blocks.router"
+    
+  
+    
+  
+    
+      "ngAnimate" -> "app.core"
+    
+      "ngSanitize" -> "app.core"
+    
+      "ngMaterial" -> "app.core"
+    
+      "ngMessages" -> "app.core"
+    
+      "blocks.logger" -> "app.core"
+    
+      "blocks.router" -> "app.core"
+    
+      "blocks.signalr" -> "app.core"
+    
+      "ui.bootstrap" -> "app.core"
+    
+      "ui.router" -> "app.core"
+    
+  
+    
+  
+    
+      "app.core" -> "app"
+    
+      "app.layout" -> "app"
+    
+      "app.public" -> "app"
+    
+  
+    
+      "app.public.receiver" -> "app.public"
+    
+      "app.public.sender" -> "app.public"
+    
+  
+    
+  
+    
+  
+}

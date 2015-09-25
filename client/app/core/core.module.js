@@ -11,7 +11,7 @@
         'blocks.logger',
         'blocks.router',
         //'blocks.network',
-        'blocks.notification',
+        'blocks.signalr',
         // Third parties modules
         'ui.bootstrap',
         'ui.router'
@@ -31,8 +31,6 @@
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }
-
-        console.log('core app configured');
 
         routerHelperProvider.configure({
             docTitle: config.appTitle + ': '

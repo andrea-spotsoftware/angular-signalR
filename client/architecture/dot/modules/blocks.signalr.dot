@@ -1,0 +1,57 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "blocks.signalr"[label="blocks.signalr", color=1]
+
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+
+    
+
+    
+      "SignalRHub"[label="SignalRHub", color=6]
+      "blocks.signalr" -> "SignalRHub"
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+
+    
+
+    
+      
+        "CONFIG"[label="CONFIG"]
+        "CONFIG" -> "SignalRHub"
+      
+    
+
+    
+
+
+}

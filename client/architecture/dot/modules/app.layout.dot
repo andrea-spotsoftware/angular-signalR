@@ -1,0 +1,59 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "app.layout"[label="app.layout", color=1]
+
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+      "hubController"[label="hubController", color=3]
+      "app.layout" -> "hubController"
+    
+      "notificationSender"[label="notificationSender", color=3]
+      "app.layout" -> "notificationSender"
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+      
+    
+      
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+}

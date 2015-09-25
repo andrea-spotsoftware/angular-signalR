@@ -5,12 +5,12 @@
         .module('app.public.receiver')
         .controller('ReceiverController', ReceiverController);
 
-    ReceiverController.$inject = ['NotificationHub', 'logger'];
+    ReceiverController.$inject = ['SignalRHub', 'logger'];
 
     /* @ngInject */
-    function ReceiverController(NotificationHub, logger) {
+    function ReceiverController(SignalRHub, logger) {
         var vm = this;
-        vm.hub = NotificationHub('notifications');
+        vm.hub = SignalRHub('notifications');
 
         vm.model = new function() {
             var model = this;

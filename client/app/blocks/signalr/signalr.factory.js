@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('blocks.notification')
-        .factory('NotificationHub', notificationHubFactory);
+        .module('blocks.signalr')
+        .factory('SignalRHub', signalRHubFactory);
 
-    notificationHubFactory.$inject = ['$rootScope', 'CONFIG', 'logger', '$q'];
+    signalRHubFactory.$inject = ['$rootScope', 'CONFIG', '$q'];
 
     /* @ngInject */
-    function notificationHubFactory($rootScope, CONFIG, logger, $q) {
+    function signalRHubFactory($rootScope, CONFIG, $q) {
 
         return constructor;
 
@@ -34,7 +34,6 @@
                         })
                         .fail(function (e) {
                             deferred.reject(e);
-                            logger.error(e);
                         });
                     return deferred.promise;
                 },
@@ -70,6 +69,11 @@
                                 });
                             });
                     }
+                },
+                stateChanged: function(callback){
+                    proxy.connection.stateChanged(function(states){
+                       callback(states); 
+                    });
                 }
             };
         }

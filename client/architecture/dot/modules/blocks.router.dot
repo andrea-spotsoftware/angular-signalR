@@ -1,0 +1,69 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "blocks.router"[label="blocks.router", color=1]
+
+    
+      "ui.router"[label="ui.router", color=1]
+      "ui.router" -> "blocks.router"
+    
+      "blocks.logger"[label="blocks.logger", color=1]
+      "blocks.logger" -> "blocks.router"
+    
+
+
+    node[shape="ellipse"]
+    
+      "routerHelper"[label="routerHelper", fillcolor=2]
+      "blocks.router" -> "routerHelper"
+    
+
+
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+      
+        "$locationProvider"[label="$locationProvider"]
+        "$locationProvider" -> "routerHelper"
+      
+        "$stateProvider"[label="$stateProvider"]
+        "$stateProvider" -> "routerHelper"
+      
+        "$urlRouterProvider"[label="$urlRouterProvider"]
+        "$urlRouterProvider" -> "routerHelper"
+      
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+}
