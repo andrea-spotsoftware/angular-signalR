@@ -29,7 +29,8 @@
 
         function link(scope, element, attrs, controller) {
             if (attrs.autoconnect !== undefined) {
-                scope.vm.toggleConnect();
+                scope.vm.connect();
+                scope.vm.toggle = true;
             }
 
             scope.vm.onConnect = (scope.vm.onConnect || angular.noop);
@@ -51,24 +52,20 @@
         vm.toggle = false;
         vm.state = 4;
 
-        vm.toggleConnect = function ($ev) {
-
+        vm.change = function (val) {
             if (vm.state === 4) {
-
-                if (!$ev) {
-                    //Autoconnect
-                    vm.toggle = true;
-                }
-
-                vm.hub.connect().then(function () {
-                    vm.onConnect();
-
-                }).catch(function (e) {
-                    vm.toggle = false;
-                });
+                vm.connect();
             } else {
                 vm.hub.disconnect();
             }
+        };
+
+        vm.connect = function () {
+            vm.hub.connect().then(function () {
+                vm.onConnect();
+            }).catch(function (e) {
+                vm.toggle = false;
+            });
         };
 
         vm.hub.stateChanged(function (states) {

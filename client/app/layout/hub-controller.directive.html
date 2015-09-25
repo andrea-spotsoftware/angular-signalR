@@ -1,4 +1,4 @@
-<md-switch class="md-primary" ng-model="vm.toggle" aria-label="Signalr Socket toggle" ng-click="vm.toggleConnect($event)" ng-disabled="vm.state === 2">
+<md-switch class="md-primary" ng-model="vm.toggle" aria-label="Signalr Socket toggle" ng-disabled="vm.state === 2" ng-change="vm.change()">
     <span ng-if="vm.state === 0">connecting...</span>
     <span ng-if="vm.state === 1">connected</span>
     <span ng-if="vm.state === 2">reconnecting...</span>
