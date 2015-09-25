@@ -32,8 +32,6 @@
             $logProvider.debugEnabled(true);
         }
 
-        console.log('core app configured');
-
         routerHelperProvider.configure({
             docTitle: config.appTitle + ': '
         });
