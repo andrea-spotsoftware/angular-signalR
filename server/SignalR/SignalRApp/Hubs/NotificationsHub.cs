@@ -12,7 +12,7 @@ namespace SignalRApp.Hubs
     [HubName("notifications")]
     public class NotificationsHub: Hub
     {
-        private static List<String> _connections = new List<string>();
+        private static List<String> _subscribers = new List<string>();
 
         public class NotificationMessage
         {
@@ -20,10 +20,12 @@ namespace SignalRApp.Hubs
             public int millis;
         }
 
+        #region Public Methods
+
         public void Publish(NotificationMessage message)
         {
             Task.Delay(message.millis).ContinueWith((antecedent) => {
-                foreach (var connection in _connections){
+                foreach (var connection in _subscribers){
                     Clients.Client(connection).notification(message.message);
                 }
             });
@@ -31,20 +33,20 @@ namespace SignalRApp.Hubs
 
         public void Subscribe()
         {
-            _connections.Add(Context.ConnectionId);
+            _subscribers.Add(Context.ConnectionId);
         }
+
+        #endregion
+
+        #region overrides
 
         public override Task OnDisconnected(bool stopCalled)
         {
-            _connections.Remove(Context.ConnectionId);
+            _subscribers.Remove(Context.ConnectionId);
 
             return base.OnDisconnected(stopCalled);
         }
 
-        public override Task OnConnected()
-        {
-
-            return base.OnConnected();
-        }
+        #endregion
     }
 }
