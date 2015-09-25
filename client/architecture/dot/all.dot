@@ -1,0 +1,666 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+    node[shape="component"]
+    
+      "blocks.logger"[label="blocks.logger", color=1]
+    
+      "blocks.notification"[label="blocks.notification", color=1]
+    
+      "blocks.router"[label="blocks.router", color=1]
+    
+      "app.core"[label="app.core", color=1]
+    
+      "app.layout"[label="app.layout", color=1]
+    
+      "app"[label="app", color=1]
+    
+      "app.public"[label="app.public", color=1]
+    
+      "app.public.receiver"[label="app.public.receiver", color=1]
+    
+      "app.public.sender"[label="app.public.sender", color=1]
+    
+
+    
+      
+    
+      
+    
+      
+        "blocks.router" -> "ui.router"
+      
+        "blocks.router" -> "blocks.logger"
+      
+    
+      
+        "app.core" -> "ngAnimate"
+      
+        "app.core" -> "ngSanitize"
+      
+        "app.core" -> "ngMaterial"
+      
+        "app.core" -> "ngMessages"
+      
+        "app.core" -> "blocks.logger"
+      
+        "app.core" -> "blocks.router"
+      
+        "app.core" -> "blocks.notification"
+      
+        "app.core" -> "ui.bootstrap"
+      
+        "app.core" -> "ui.router"
+      
+    
+      
+    
+      
+        "app" -> "app.core"
+      
+        "app" -> "app.layout"
+      
+        "app" -> "app.public"
+      
+    
+      
+        "app.public" -> "app.public.receiver"
+      
+        "app.public" -> "app.public.sender"
+      
+    
+      
+    
+      
+    
+
+    node[shape="ellipse"]
+
+
+    
+      
+
+      
+
+      
+
+      
+        "logger"[label="logger", color=6]
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+
+      
+
+      
+        "blocks.logger" -> "logger"
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+
+      
+
+      
+        
+          "toastr"[label="toastr"]
+          "toastr" -> "logger"
+        
+      
+
+      
+
+    
+      
+
+      
+
+      
+
+      
+        "NotificationHub"[label="NotificationHub", color=6]
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+
+      
+
+      
+        "blocks.notification" -> "NotificationHub"
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+
+      
+
+      
+        
+          "CONFIG"[label="CONFIG"]
+          "CONFIG" -> "NotificationHub"
+        
+          "logger"[label="logger"]
+          "logger" -> "NotificationHub"
+        
+      
+
+      
+
+    
+      
+        "routerHelper"[label="routerHelper", color=2]
+      
+
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+        "blocks.router" -> "routerHelper"
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+        
+          "$locationProvider"[label="$locationProvider"]
+          "$locationProvider" -> "routerHelper"
+        
+          "$stateProvider"[label="$stateProvider"]
+          "$stateProvider" -> "routerHelper"
+        
+          "$urlRouterProvider"[label="$urlRouterProvider"]
+          "$urlRouterProvider" -> "routerHelper"
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    
+      
+
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    
+      
+
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+        "hubController"[label="hubController", color=3]
+      
+        "notificationSender"[label="notificationSender", color=3]
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+        "app.layout" -> "hubController"
+      
+        "app.layout" -> "notificationSender"
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+        
+      
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+    
+      
+
+      
+        "AppController"[label="AppController", color=4]
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+        "app" -> "AppController"
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+        
+          "logger"[label="logger"]
+          "logger" -> "AppController"
+        
+      
+
+      
+
+      
+
+      
+
+    
+      
+
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    
+      
+
+      
+        "ReceiverController"[label="ReceiverController", color=4]
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+        "app.public.receiver" -> "ReceiverController"
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+        
+          "NotificationHub"[label="NotificationHub"]
+          "NotificationHub" -> "ReceiverController"
+        
+          "logger"[label="logger"]
+          "logger" -> "ReceiverController"
+        
+      
+
+      
+
+      
+
+      
+
+    
+      
+
+      
+        "SenderController"[label="SenderController", color=4]
+      
+
+      
+
+      
+
+
+      node[shape="cds"]
+
+      
+
+      
+
+
+
+
+
+      node[shape="ellipse"]
+      
+
+      
+
+      
+        "app.public.sender" -> "SenderController"
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      node[shape="ellipse",style="filled", color=8]
+      
+
+      
+
+      
+        
+          "NotificationHub"[label="NotificationHub"]
+          "NotificationHub" -> "SenderController"
+        
+          "$mdDialog"[label="$mdDialog"]
+          "$mdDialog" -> "SenderController"
+        
+      
+
+      
+
+      
+
+      
+
+    
+}

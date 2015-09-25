@@ -1,0 +1,60 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "blocks.notification"[label="blocks.notification", color=1]
+
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+
+    
+
+    
+      "NotificationHub"[label="NotificationHub", color=6]
+      "blocks.notification" -> "NotificationHub"
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+
+    
+
+    
+      
+        "CONFIG"[label="CONFIG"]
+        "CONFIG" -> "NotificationHub"
+      
+        "logger"[label="logger"]
+        "logger" -> "NotificationHub"
+      
+    
+
+    
+
+
+}

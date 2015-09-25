@@ -1,0 +1,60 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "app.public.receiver"[label="app.public.receiver", color=1]
+
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+      "ReceiverController"[label="ReceiverController", color=4]
+      "app.public.receiver" -> "ReceiverController"
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+      
+        "NotificationHub"[label="NotificationHub"]
+        "NotificationHub" -> "ReceiverController"
+      
+        "logger"[label="logger"]
+        "logger" -> "ReceiverController"
+      
+    
+
+    
+
+    
+
+    
+
+
+}

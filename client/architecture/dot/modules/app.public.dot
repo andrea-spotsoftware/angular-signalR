@@ -1,0 +1,55 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "app.public"[label="app.public", color=1]
+
+    
+      "app.public.receiver"[label="app.public.receiver", color=1]
+      "app.public.receiver" -> "app.public"
+    
+      "app.public.sender"[label="app.public.sender", color=1]
+      "app.public.sender" -> "app.public"
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+}

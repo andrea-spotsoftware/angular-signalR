@@ -1,0 +1,76 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "app.core"[label="app.core", color=1]
+
+    
+      "ngAnimate"[label="ngAnimate", color=1]
+      "ngAnimate" -> "app.core"
+    
+      "ngSanitize"[label="ngSanitize", color=1]
+      "ngSanitize" -> "app.core"
+    
+      "ngMaterial"[label="ngMaterial", color=1]
+      "ngMaterial" -> "app.core"
+    
+      "ngMessages"[label="ngMessages", color=1]
+      "ngMessages" -> "app.core"
+    
+      "blocks.logger"[label="blocks.logger", color=1]
+      "blocks.logger" -> "app.core"
+    
+      "blocks.router"[label="blocks.router", color=1]
+      "blocks.router" -> "app.core"
+    
+      "blocks.notification"[label="blocks.notification", color=1]
+      "blocks.notification" -> "app.core"
+    
+      "ui.bootstrap"[label="ui.bootstrap", color=1]
+      "ui.bootstrap" -> "app.core"
+    
+      "ui.router"[label="ui.router", color=1]
+      "ui.router" -> "app.core"
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+}

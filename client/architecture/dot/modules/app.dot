@@ -1,0 +1,66 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "app"[label="app", color=1]
+
+    
+      "app.core"[label="app.core", color=1]
+      "app.core" -> "app"
+    
+      "app.layout"[label="app.layout", color=1]
+      "app.layout" -> "app"
+    
+      "app.public"[label="app.public", color=1]
+      "app.public" -> "app"
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+      "AppController"[label="AppController", color=4]
+      "app" -> "AppController"
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+      
+        "logger"[label="logger"]
+        "logger" -> "AppController"
+      
+    
+
+    
+
+    
+
+    
+
+
+}

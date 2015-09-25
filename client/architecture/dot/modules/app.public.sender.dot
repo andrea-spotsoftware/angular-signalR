@@ -1,0 +1,60 @@
+digraph dependencies {
+  node[shape="component",style="filled",colorscheme=paired12]
+
+
+    node[shape="component"]
+    "app.public.sender"[label="app.public.sender", color=1]
+
+    
+
+
+    node[shape="ellipse"]
+    
+
+
+    
+      "SenderController"[label="SenderController", color=4]
+      "app.public.sender" -> "SenderController"
+    
+
+    
+
+    
+
+    node[shape="cds"]
+    
+
+    
+
+
+
+
+
+
+
+
+
+    node[shape="ellipse",style="filled", color=9]
+    
+
+    
+
+
+    
+      
+        "NotificationHub"[label="NotificationHub"]
+        "NotificationHub" -> "SenderController"
+      
+        "$mdDialog"[label="$mdDialog"]
+        "$mdDialog" -> "SenderController"
+      
+    
+
+    
+
+    
+
+    
+
+
+}
