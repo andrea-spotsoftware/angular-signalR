@@ -1,3 +1,4 @@
+/// <reference path='../../_all.ts' />
 namespace blocks.logger {
     
     interface ILoggerFunction {

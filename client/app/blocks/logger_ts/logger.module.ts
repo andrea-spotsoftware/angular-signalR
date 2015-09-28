@@ -1,6 +1,7 @@
+/// <reference path='../../_all.ts' />
 namespace blocks.logger {
     'use strict';
-    
+        
     angular.module('blocks.logger', [])
         .constant('toastr', toastr)
         .config(moduleConfig);
