@@ -404,6 +404,7 @@ module.exports = function (grunt) {
             return grunt.task.run(['build', 'connect:dist:keepalive']);
         } else {
             grunt.task.run([
+                'typescript',
                 'clean:server',
                 'wiredep',
                 'concurrent:server',
@@ -415,6 +416,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
+        'typescript',
         'clean:dist',
         'wiredep',
         'useminPrepare',

@@ -17,8 +17,5 @@
     "toastr": "~2.1.0",
     "angular-messages": "~1.4.6",
     "font-awesome": "~4.4.0"
-  },
-  "devDependencies": {
-    "DefinitelyTyped": "*"
   }
 }

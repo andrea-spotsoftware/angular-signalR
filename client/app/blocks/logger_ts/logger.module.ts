@@ -1,4 +1,4 @@
-/// <reference path='../../_all.ts' />
+/// <reference path="../../../typings/tsd.d.ts" />
 namespace blocks.logger {
     'use strict';
         
@@ -12,6 +12,5 @@ namespace blocks.logger {
         toastr.options.timeOut = 4000;
         toastr.options.positionClass = 'toast-top-right';
         toastr.options.progressBar = true;
-    }
-    
+    }    
 }
