@@ -1,14 +1,14 @@
 namespace blocks.logger {
     
-    interface loggerFunction {
+    interface ILoggerFunction {
         (message: string, data: Object, title: string): void;
     }
     
     export interface ILoggerService {
-        info: loggerFunction;
-        error: loggerFunction;
-        success: loggerFunction;
-        warning: loggerFunction;
+        info: ILoggerFunction;
+        error: ILoggerFunction;
+        success: ILoggerFunction;
+        warning: ILoggerFunction;
         log: (...args: any[]) => void;
     }
 
